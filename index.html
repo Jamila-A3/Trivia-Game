@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Totally Trivia Game</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+<div id="wrapper">
+    
+    <h1 id="title">Totally Trivial Trivia !</h1>
+    <div id="subwrapper">
+    <div id="display">Time: <span id="countdown"></span></div>
+    <div id="buttons">
+        <button id="start">Start</button>
+        <button id="reset">Reset</button>
+    </div>
+    
+    </div>
+
+    <form id="trivia" name="trivia">
+        <p>What is the largest continent in the world?</p>
+        <input type = "radio" id = "mc" name = "question1" value = "Asia">Asia<br>
+        <input type = "radio" id = "mc" name = "question1" value = "Europe">Europe<br>
+        <input type = "radio" id = "mc" name = "question1" value = "Africa">Africa<br>
+
+        <p>What is the largest ocean in the world?</p>
+        <input type = "radio" id = "mc" name = "question2" value = "Atlantic">Atlantic<br>
+        <input type = "radio" id = "mc" name = "question2" value = "Indian">Atlantic<br>
+        <input type = "radio" id = "mc" name = "question2" value = "Pacific">Pacific<br>
+
+
+        <p>What is the largest bird in the world?</p>
+        <input type = "radio" id = "mc" name = "question3" value = "Swan">Swan<br>
+        <input type = "radio" id = "mc" name = "question3" value = "Ostrich">Ostrich<br>
+        <input type = "radio" id = "mc" name = "question3" value = "Eagle">Eagle<br>
+
+
+        <input id="button" type = "button" value= "Done" onclick="check();">
+
+    </form>
+       
+        <div id="after_submit">
+        <p id="number_correct"></p>
+        <p id="message"></p>
+        
+        
+    </div>
+</div>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
+</body>
+</html>
