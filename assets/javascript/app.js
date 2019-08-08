@@ -7,6 +7,9 @@ $(document).on('click', '.answer-button', function (e) {
     game.clicked(e);
 })
 
+$(document).on('click', '#reset', function () {
+    game.reset();
+})
 var questions = [{
     question: "What is the largest continent in the world?",
     answers: ["Asia", "Europe", "Africa", "America"],
@@ -70,6 +73,17 @@ var game = {
         }
 
     },
+
+    results: function () {
+        clearInterval(timer);
+        clear(gif);
+        $('#subwrapper').html("<h2> All Done!</h2>");
+        $('#subwrapper').append("<h3> Correct: "+ game.correct+"</h3>");
+        $('#subwrapper').append("<h3> Incorrect: "+game.incorrect+"</h3>");
+        $('#subwrapper').append("<h3> Unanswered: "+game.unanswered+"</h3>");
+        $('#subwrapper').append("<button id='reset'> Reset </button>");
+
+    },
     clicked: function (e) {
         clearInterval(timer);
         if ($(e.target).data("name") == questions[game.currentQuestion].
@@ -100,7 +114,7 @@ var game = {
         img.attr('src', './assets/images/loser.gif')
         console.log("Wrong!");
         clearInterval(timer);
-        game.correct++;
+        game.incorrect++;
         $('#subwrapper').html('<h2> You got it wrong!</h2>');
         $('#image-placement').html(img);
         if (game.currentQuestion == questions.length - 1) {
@@ -109,16 +123,6 @@ var game = {
             setTimeout(game.nextQuestion, 2 * 1000);
 
         }
-
-    },
-
-    results: function () {
-        clearInterval(timer);
-        $('#subwrapper').html('<h2> All Done!</h2>');
-        $('#subwrapper').append('<h3> Correct: + game.correct</h3>');
-        $('#subwrapper').append('<h3> Incorrect: "+game.incorrect"</h3>');
-        $('#subwrapper').append('<h3> Unanswered: "+game.unanswered"</h3>');
-        $('#subwrapper').append("<button id='reset'> Reset </button>");
 
     },
 
